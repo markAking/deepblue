@@ -109,11 +109,9 @@ if width > maxwidth:
 img = np.float32(img)
 
 frame = img
-#frame_i = 0
+frame_i = 0
 
 frame = deepdream(net, frame, end=json_data['layer'])
-#frame = deepdream(net, img, end='inception_3b/5x5_reduce')
-#frame = deepdream(net, img, end='conv2/3x3')
 
 PIL.Image.fromarray(np.uint8(frame)).save("output.jpg")
 
